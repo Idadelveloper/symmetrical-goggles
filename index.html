@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19 Estimator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h2>WELCOME TO COVID-19 ESTIMATOR!</h2>
+    </header>
+
+    <section>
+        
+        <h4>Enter the following fields</h4>
+
+        <form action="">
+            <label for="population">Population:</label><br>
+            <input type="number" id="population" name="data-population" data-population required><br>
+            
+            <label for="timeToElapse">Time to elapse:</label><br>
+            <input type="number" id="timeToElapse" name="data-time-to-elapse" data-time-to-elapse required><br>
+            
+            <label for="reportedCases">Reported Cases:</label><br>
+            <input type="number" id="reportedCases" name="data-reported-cases" data-reported-cases required><br>
+            
+            <label for="totalHospitalBeds">Total Hospital Beds:</label><br>
+            <input type="number" id="totalHospitalBeds" name="data-total-hospital-beds" totalHospitalBeds required><br>
+
+            <label for="data-period-type">Period Type</label>
+            <select name="data-period-type" size="3">
+                <option value="days">days</option>
+                <option value="weeks">weeks</option>
+                <option value="months">months</option>
+              </select> <br>
+
+              <input type="submit" value="Submit" data-go-estimate>
+          </form> 
+
+    </section>
+
+    <footer>
+        Stay Safe!
+    </footer>
+    
+</body>
+</html>
