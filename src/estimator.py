@@ -32,11 +32,11 @@ def estimator(data):
     #Severe impact
     severeImpact['casesForICUByRequestedTime'] = round((5/100) * severeImpact['infectionsByRequestedTime'])
     severeImpact['casesForVentilatorsByRequestedTime'] = round((2/100) * severeImpact['infectionsByRequestedTime'])
-    severeImpact['dollarsInFlight'] = (severeImpact['infectionsByRequestedTime'] * data['region']['avgDailyIncomePopulation'] * data['region']['avgDailyIncomeInUSD']) / data['timeToElapse']
+    severeImpact['dollarsInFlight'] = int((severeImpact['infectionsByRequestedTime'] * data['region']['avgDailyIncomePopulation'] * data['region']['avgDailyIncomeInUSD']) // data['timeToElapse'])
     #Impact
     impact['casesForICUByRequestedTime'] = round((5/100) * impact['infectionsByRequestedTime'])
     impact['casesForVentilatorsByRequestedTime'] = round((2/100) * impact['infectionsByRequestedTime'])
-    impact['dollarsInFlight'] = (impact['infectionsByRequestedTime'] * data['region']['avgDailyIncomePopulation'] * data['region']['avgDailyIncomeInUSD']) / data['timeToElapse']
+    impact['dollarsInFlight'] = int((impact['infectionsByRequestedTime'] * data['region']['avgDailyIncomePopulation'] * data['region']['avgDailyIncomeInUSD']) // data['timeToElapse'])
     
     #Output Data
     data = {'data': data, 
