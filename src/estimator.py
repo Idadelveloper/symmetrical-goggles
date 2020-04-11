@@ -20,22 +20,22 @@ def estimator(data):
     
     #CHALLENGE 2
     #Severe impact
-    severeCasesByRequestedTime = round((15/100) * severeImpact['infectionsByRequestedTime'])
+    severeCasesByRequestedTime = int((15/100) * severeImpact['infectionsByRequestedTime'])
     severeImpact['severeCasesByRequestedTime'] =  severeCasesByRequestedTime
-    bedsByRequestedTime = round((35/100) * data['totalHospitalBeds'])
+    bedsByRequestedTime = int((35/100) * data['totalHospitalBeds'])
     severeImpact['hospitalBedsByRequestedTime'] = bedsByRequestedTime - severeCasesByRequestedTime
     #Impact
-    impact['severeCasesByRequestedTime'] = round((15/100) * impact['infectionsByRequestedTime'])
+    impact['severeCasesByRequestedTime'] = int((15/100) * impact['infectionsByRequestedTime'])
     impact['hospitalBedsByRequestedTime'] = bedsByRequestedTime - impact['severeCasesByRequestedTime']
     
     #CHALLENGE 3
     #Severe impact
-    severeImpact['casesForICUByRequestedTime'] = round((5/100) * severeImpact['infectionsByRequestedTime'])
-    severeImpact['casesForVentilatorsByRequestedTime'] = round((2/100) * severeImpact['infectionsByRequestedTime'])
+    severeImpact['casesForICUByRequestedTime'] = int((5/100) * severeImpact['infectionsByRequestedTime'])
+    severeImpact['casesForVentilatorsByRequestedTime'] = int((2/100) * severeImpact['infectionsByRequestedTime'])
     severeImpact['dollarsInFlight'] = int((severeImpact['infectionsByRequestedTime'] * data['region']['avgDailyIncomePopulation'] * data['region']['avgDailyIncomeInUSD']) // data['timeToElapse'])
     #Impact
-    impact['casesForICUByRequestedTime'] = round((5/100) * impact['infectionsByRequestedTime'])
-    impact['casesForVentilatorsByRequestedTime'] = round((2/100) * impact['infectionsByRequestedTime'])
+    impact['casesForICUByRequestedTime'] = int((5/100) * impact['infectionsByRequestedTime'])
+    impact['casesForVentilatorsByRequestedTime'] = int((2/100) * impact['infectionsByRequestedTime'])
     impact['dollarsInFlight'] = int((impact['infectionsByRequestedTime'] * data['region']['avgDailyIncomePopulation'] * data['region']['avgDailyIncomeInUSD']) // data['timeToElapse'])
     
     #Output Data
