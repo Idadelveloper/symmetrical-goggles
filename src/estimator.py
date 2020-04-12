@@ -15,8 +15,8 @@ def estimator(data):
     #CHALLENGE 1
     impact['currentlyInfected'] = data['reportedCases'] * 10
     severeImpact['currentlyInfected'] = data['reportedCases'] * 50
-    impact['infectionsByRequestedTime'] = impact['currentlyInfected'] * timeToElapse(data)
-    severeImpact['infectionsByRequestedTime'] = severeImpact['currentlyInfected'] * timeToElapse(data)
+    impact['infectionsByRequestedTime'] = int(impact['currentlyInfected'] * timeToElapse(data))
+    severeImpact['infectionsByRequestedTime'] = int(severeImpact['currentlyInfected'] * timeToElapse(data))
     
     #CHALLENGE 2
     #Severe impact
