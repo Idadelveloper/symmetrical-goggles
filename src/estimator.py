@@ -1,3 +1,4 @@
+# period type function
 def timeToElapse(data):
     if data['periodType'] == 'days':
         return 2**(data['timeToElapse']//3)
