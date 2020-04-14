@@ -21,10 +21,9 @@ def estimator(data):
     
     #CHALLENGE 2
     #Severe impact
-    severeCasesByRequestedTime = int((15/100) * severeImpact['infectionsByRequestedTime'])
-    severeImpact['severeCasesByRequestedTime'] =  severeCasesByRequestedTime
+    severeImpact['severeCasesByRequestedTime'] =  int((15/100) * severeImpact['infectionsByRequestedTime'])
     bedsByRequestedTime = int((35/100) * data['totalHospitalBeds'])
-    severeImpact['hospitalBedsByRequestedTime'] = int(bedsByRequestedTime - severeCasesByRequestedTime)
+    severeImpact['hospitalBedsByRequestedTime'] = int(bedsByRequestedTime - severeImpact['severeCasesByRequestedTime'])
     #Impact
     impact['severeCasesByRequestedTime'] = int((15/100) * impact['infectionsByRequestedTime'])
     impact['hospitalBedsByRequestedTime'] = int(bedsByRequestedTime - impact['severeCasesByRequestedTime'])
